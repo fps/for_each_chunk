@@ -1,8 +1,6 @@
 #ifndef FOR_EACH_CHUNK_INCLUDED_HH
 #define FOR_EACH_CHUNK_INCLUDED_HH
 
-#include <iostream>
-
 /**
  * Iterator must be a random access iterator
  */
@@ -10,8 +8,6 @@ template<class Iterator, class Functor>
 inline void for_each_chunk(Iterator begin, Iterator end, unsigned int chunk_size, Functor f) {
 	unsigned int num_of_chunks = (end - begin) / chunk_size;
 	unsigned int remainder = (end - begin) % chunk_size;
-	
-	// std::cout << "# of chunks: " << num_of_chunks << std::endl;
 	
 	/*
 	 * Handle "normal" chunks
