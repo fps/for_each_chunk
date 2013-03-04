@@ -20,7 +20,10 @@ inline void for_each_chunk(Iterator begin, Iterator end, unsigned int chunk_size
 	/*
 	 * Handle remainder
 	 */
-	f(begin + chunk_size * num_of_chunks, end);
+	if (0 != remainder)
+	{
+		f(begin + chunk_size * num_of_chunks, end);
+	}
 }
 
 #endif
