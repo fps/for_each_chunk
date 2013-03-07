@@ -25,5 +25,24 @@ int main()
 		v.push_back(index);
 	}
 		
+		
 	for_each_chunk(v.begin(), v.end(), 100, print);
+	
+#if 0
+	//! C++-11 Style with lambdas
+	for_each_chunk
+	(
+		v.begin(), 
+		v.end(), 
+		100, 
+		[](std::vector<int>::iterator begin, std::vector<int>::iterator end) 
+		{
+			std::cout << "hah" << std::endl; 
+			for (std::vector<int>::iterator it = begin; it != end; ++it) 
+			{
+				std::cout << *it << std::endl;
+			}
+		}
+	);
+#endif
 }
